@@ -51,11 +51,11 @@ for (( i = ${#array[@]}; i; )); do
      for name in *
      do
      	     # Check for spaces in names of files and directories.
-	     echo "$name" | grep -q " "
+	     echo "$name" | grep -q "_"
 	     if [ $? -eq 0 ]
 	     then
 	     	# Replacing spaces with underscores.
-	        newname=`echo $name | sed -e "s/ /_/g"`
+	        newname=`echo $name | sed -e "s/_/ /g"`
 		if [ -e $newname ]
         	then
 			let "number_not +=1"
